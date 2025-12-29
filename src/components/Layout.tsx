@@ -1,12 +1,11 @@
 import type { ReactNode } from "react";
-import { useLocation } from "react-router-dom";
 
 interface LayoutProps {
   children: ReactNode;
 }
 
 export default function Layout({ children }: LayoutProps) {
-  const location = useLocation();
+  // const location = useLocation();
   return (
     <div
       className="min-h-screen flex justify-center"
