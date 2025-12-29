@@ -13,12 +13,26 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8">
-      <div className="text-center space-y-6">
-        <h1 className="text-2xl font-bold text-gray-800">
-          GAMENT 제국의 초대장이 도착했다!
+    <div className="flex flex-col items-center justify-center min-h-screen">
+      <div className="w-full text-center space-y-6 backdrop-blur-sm p-8">
+        <h1
+          className="text-6xl font-bold text-gray-800"
+          style={{ fontFamily: "Cafe24ClassicType, sans-serif" }}
+        >
+          GAMENT 제국에서
         </h1>
-        <p className="text-lg text-gray-700">초대장에 적힌 영애의 이름은?</p>
+        <h1
+          className="text-4xl font-bold text-gray-800"
+          style={{ fontFamily: "Cafe24ClassicType, sans-serif" }}
+        >
+          초대장이 도착했다!
+        </h1>
+        <p
+          className="text-lg text-gray-700"
+          style={{ fontFamily: "Cafe24ClassicType, sans-serif" }}
+        >
+          초대장에 적힌 영애의 이름은?
+        </p>
 
         <div className="space-y-4 mt-8">
           <input

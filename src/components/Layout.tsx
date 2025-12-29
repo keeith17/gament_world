@@ -9,14 +9,14 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div
       className="min-h-screen flex justify-center"
-      style={{
-        backgroundImage: "url(/temp_back.png)",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      // style={{
+      //   backgroundImage: "url(/temp_back.png)",
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      // }}
     >
       <div
-        className="w-full max-w-[700px] min-h-screen bg-white/20 backdrop-blur-sm"
+        className="w-full max-w-[700px] min-h-screen max-h-screen"
         // style={
         //   location.pathname.includes("/letter")
         //     ? {
@@ -27,6 +27,11 @@ export default function Layout({ children }: LayoutProps) {
         //       }
         //     : {}
         // }
+        style={{
+          backgroundImage: "url(/temp_back.png)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         {children}
       </div>
