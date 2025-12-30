@@ -8,6 +8,15 @@ export default function Result() {
 
   const { scores, winner } = calculateResult(answers);
 
+  const nameMap: Record<string, string> = {
+    daegong: "대공",
+    qnam: "쾌남",
+    topju: "탑주",
+    danju: "단주",
+  };
+
+  const winnerName = winner ? nameMap[winner] : "";
+
   const handleGoHome = () => {
     // 로컬 스토리지 초기화
     localStorage.removeItem("answer");
@@ -37,7 +46,7 @@ export default function Result() {
 
         <div className="mt-8 p-6 bg-pink-100 rounded-lg border-2 border-pink-300">
           <h2 className="text-xl font-bold text-gray-800">
-            당신의 파트너는: {winner}
+            당신의 파트너는: {winnerName}
           </h2>
         </div>
 

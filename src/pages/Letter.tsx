@@ -50,36 +50,57 @@ export default function Letter() {
   const theseQuestion =
     questionData[questionNumber as keyof typeof questionData];
 
+  const totalQuestions = 13;
+  const progress = (questionNumber / totalQuestions) * 100;
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8">
-      <div className="text-center space-y-6">
-        <h1 className="text-2xl font-bold text-gray-800">
-          {theseQuestion.question}
-        </h1>
+    <div className="flex flex-col min-h-screen">
+      {/* 진행 바 */}
+      <div className="w-full bg-gray-200 h-2">
+        <div
+          className="bg-pink-400 h-2 transition-all duration-300"
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
 
-        <div className="space-y-3">
-          {theseQuestion.answer.map((item, index) => (
-            <button
-              key={index}
-              onClick={() => setSelectedWhose(item.whose)}
-              className={`w-full px-4 py-3 rounded-lg border-2 transition-colors ${
-                selectedWhose === item.whose
-                  ? "border-pink-400 bg-pink-100"
-                  : "border-pink-200 bg-white hover:border-pink-300"
-              }`}
-            >
-              {item.select}
-            </button>
-          ))}
+      {/* 진행 표시 */}
+      <div className="w-full py-3 text-center backdrop-blur-sm">
+        <div className="text-base font-semibold text-pink-500">
+          Question {questionNumber} / {totalQuestions}
         </div>
+      </div>
 
-        <button
-          onClick={handleSubmit}
-          disabled={!selectedWhose}
-          className="w-full px-6 py-3 bg-pink-300 text-white rounded-lg hover:bg-pink-400 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
-        >
-          {questionNumber === 13 ? "결과 보기" : "다음"}
-        </button>
+      {/* 질문 영역 */}
+      <div className="flex-1 flex flex-col items-center justify-center p-8">
+        <div className="text-center space-y-6">
+          <h1 className="text-2xl font-bold text-gray-800">
+            {theseQuestion.question}
+          </h1>
+
+          <div className="space-y-3">
+            {theseQuestion.answer.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => setSelectedWhose(item.whose)}
+                className={`w-full px-4 py-3 rounded-lg border-2 transition-colors ${
+                  selectedWhose === item.whose
+                    ? "border-pink-400 bg-pink-100"
+                    : "border-pink-200 bg-white hover:border-pink-300"
+                }`}
+              >
+                {item.select}
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={handleSubmit}
+            disabled={!selectedWhose}
+            className="w-full px-6 py-3 bg-pink-300 text-white rounded-lg hover:bg-pink-400 transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
+          >
+            {questionNumber === 13 ? "결과 보기" : "다음"}
+          </button>
+        </div>
       </div>
     </div>
   );
