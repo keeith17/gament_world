@@ -16,6 +16,28 @@ export default function Result() {
   };
 
   const winnerName = winner ? nameMap[winner] : "";
+  const userName = `${localStorage.getItem("userName")} 영애` || "당신";
+
+  const handleShare = async () => {
+    const shareData = {
+      title: "GAMENT 제국 티파티 결과",
+      text: `${userName}의 파트너는 ${winnerName}입니다! GAMENT 제국에서 당신의 파트너를 찾아보세요!`,
+      url: window.location.origin,
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+      } else {
+        // fallback: 클립보드에 복사
+        const textToCopy = `${shareData.text}\n${shareData.url}`;
+        await navigator.clipboard.writeText(textToCopy);
+        alert("결과가 클립보드에 복사되었습니다!");
+      }
+    } catch (error) {
+      console.error("공유 실패:", error);
+    }
+  };
 
   const handleGoHome = () => {
     // 로컬 스토리지 초기화
@@ -51,8 +73,15 @@ export default function Result() {
         </div>
 
         <button
+          onClick={handleShare}
+          className="w-full px-6 py-3 bg-pink-400 text-white rounded-lg hover:bg-pink-500 transition-colors mt-6"
+        >
+          결과 공유하기
+        </button>
+
+        <button
           onClick={handleGoHome}
-          className="w-full px-6 py-3 bg-pink-300 text-white rounded-lg hover:bg-pink-400 transition-colors mt-6"
+          className="w-full px-6 py-3 bg-pink-300 text-white rounded-lg hover:bg-pink-400 transition-colors"
         >
           홈으로 돌아가기
         </button>
