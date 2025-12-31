@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
-      <div className="w-full text-center space-y-6 backdrop-blur-sm p-8">
+      <div className="w-full text-center space-y-6 p-8">
         <h1
           className="text-6xl font-bold text-gray-800"
           style={{ fontFamily: "Cafe24ClassicType, sans-serif" }}

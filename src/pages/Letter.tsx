@@ -71,7 +71,7 @@ export default function Letter() {
       </div>
 
       {/* 질문 영역 */}
-      <div className="flex-1 flex flex-col items-center justify-center p-8">
+      <div className="flex-1 flex flex-col items-center justify-center p-8 backdrop-blur-sm">
         <div className="text-center space-y-6">
           <h1 className="text-2xl font-bold text-gray-800">
             {theseQuestion.question}
