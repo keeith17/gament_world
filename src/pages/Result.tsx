@@ -42,7 +42,7 @@ export default function Result() {
 
   return (
     <div
-      className="min-h-screen overflow-y-auto"
+      className="min-h-screen max-h-screen overflow-y-auto p-20"
       style={{
         backgroundImage: "url(/temp_letter2.png)",
         backgroundSize: "cover",
@@ -58,15 +58,22 @@ export default function Result() {
                 {result.title}
               </h1>
 
-              <img
-                src={`/${winner}.png`}
-                alt={result.title}
-                className="max-h-64 w-auto mx-auto rounded-lg"
-              />
+              <div className="flex gap-4 justify-center items-end">
+                <img
+                  src={`/${winner}.png`}
+                  alt={result.title}
+                  className="max-h-64 w-auto rounded-lg"
+                />
+                <img
+                  src={`/${winner}2.png`}
+                  alt={result.title}
+                  className="max-h-52 w-auto rounded-lg pb-2"
+                />
+              </div>
 
               <div className="bg-white/80 p-6 rounded-lg space-y-4">
                 <div>
-                  <h3 className="text-sm text-gray-500 mb-2">키워드</h3>
+                  <h3 className="text-sm text-pink-700 mb-2">키워드</h3>
                   <div className="flex gap-2 justify-center flex-wrap">
                     {result.keywords.map((keyword, idx) => (
                       <span
@@ -80,7 +87,7 @@ export default function Result() {
                 </div>
 
                 <div className="text-left space-y-2">
-                  <h3 className="text-sm text-gray-500 mb-2">당신의 성향</h3>
+                  <h3 className="text-sm text-pink-700 mb-2">당신의 성향</h3>
                   {result.tendency.map((text, idx) => (
                     <p key={idx} className="text-gray-700 leading-relaxed">
                       {text}
@@ -89,7 +96,7 @@ export default function Result() {
                 </div>
 
                 <div className="text-left space-y-2">
-                  <h3 className="text-sm text-gray-500 mb-2">인물 소개</h3>
+                  <h3 className="text-sm text-pink-700 mb-2">인물 소개</h3>
                   {result.character.map((text, idx) => (
                     <p key={idx} className="text-gray-700 leading-relaxed">
                       {text}
@@ -98,7 +105,7 @@ export default function Result() {
                 </div>
 
                 <div className="bg-pink-50 p-4 rounded-lg text-left">
-                  <h3 className="text-sm text-gray-500 mb-2">초대장</h3>
+                  <h3 className="text-sm text-pink-700 mb-2">초대장</h3>
                   <p className="text-gray-700 whitespace-pre-line leading-relaxed">
                     {result.invitation.body.replace(/{{user}}/g, userName)}
                   </p>
