@@ -79,16 +79,16 @@ export default function Result() {
               {result.title}
             </h1>
 
-            <div className="flex gap-4 justify-center items-end">
+            <div className="flex gap-2 sm:gap-4 justify-center items-end">
               <img
                 src={`/${winner}.png`}
                 alt={result.title}
-                className="max-h-64 w-auto rounded-lg"
+                className="max-h-40 sm:max-h-52 md:max-h-64 w-auto rounded-lg"
               />
               <img
                 src={`/${winner}2.png`}
                 alt={result.title}
-                className="max-h-52 w-auto rounded-lg pb-2"
+                className="max-h-32 sm:max-h-44 md:max-h-52 w-auto rounded-lg pb-2"
               />
             </div>
 
