@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { calculateResult } from "../utils/calculateResult";
 import { resultData } from "../data/resultData";
 import html2canvas from "html2canvas";
+import { useState, useEffect } from "react";
 
 export default function Result() {
   const navigate = useNavigate();
@@ -12,6 +13,19 @@ export default function Result() {
 
   const userName = localStorage.getItem("userName") || "당신";
   const result = winner ? resultData[winner as keyof typeof resultData] : null;
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const img = new Image();
+    img.src = "/temp_letter3.png";
+    img.onload = () => {
+      setIsLoading(false);
+    };
+    img.onerror = () => {
+      setIsLoading(false);
+    };
+  }, []);
 
   const handleShare = async () => {
     const shareData = {
@@ -123,6 +137,17 @@ export default function Result() {
     localStorage.removeItem("userName");
     navigate("/");
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-pink-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-pink-400 mx-auto mb-4"></div>
+          <p className="text-gray-700 text-lg">결과를 불러오는 중...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
