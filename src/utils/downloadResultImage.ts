@@ -1,13 +1,31 @@
 import html2canvas from "html2canvas";
 
 export async function downloadResultImage(fileName: string) {
-  const contentElement = document.querySelector(".result-content");
-  if (!contentElement) return;
+  // 헤더와 바디를 모두 가져오기
+  const headerElement = document.querySelector(".result-content-header");
+  const bodyElement = document.querySelector(".result-content-body");
 
-  const clonedElement = contentElement.cloneNode(true) as HTMLElement;
+  if (!headerElement || !bodyElement) return;
+
+  // 래퍼 생성
+  const wrapperElement = document.createElement("div");
+  wrapperElement.style.textAlign = "center";
+
+  // 헤더와 바디 복제
+  const clonedHeader = headerElement.cloneNode(true) as HTMLElement;
+  const clonedBody = bodyElement.cloneNode(true) as HTMLElement;
+
+  // 래퍼에 추가
+  wrapperElement.appendChild(clonedHeader);
+  const spacer = document.createElement("div");
+  spacer.style.height = "24px";
+  wrapperElement.appendChild(spacer);
+  wrapperElement.appendChild(clonedBody);
+
+  const clonedElement = wrapperElement;
 
   // 다운로드용 적절한 너비 설정 (모바일에서도 충분한 너비)
-  const desiredWidth = Math.max(600, contentElement.clientWidth);
+  const desiredWidth = Math.max(600, bodyElement.clientWidth);
 
   // 복제된 DOM을 화면 밖에 배치
   clonedElement.style.position = "absolute";

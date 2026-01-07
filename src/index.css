@@ -21,3 +21,13 @@
 * {
   font-family: "ChosunIlboMyungjo", serif;
 }
+
+/* 스크롤바 숨기기 */
+.result-content-scroll {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.result-content-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
