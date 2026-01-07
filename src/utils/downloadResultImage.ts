@@ -34,7 +34,7 @@ export async function downloadResultImage(fileName: string) {
   clonedElement.style.width = desiredWidth + "px";
 
   // 배경 이미지 추가
-  clonedElement.style.backgroundImage = "url(/temp_letter3.png)";
+  clonedElement.style.backgroundImage = "url(/temp_letter4.png)";
   clonedElement.style.backgroundSize = "cover";
   clonedElement.style.backgroundPosition = "center";
   clonedElement.style.backgroundRepeat = "no-repeat";

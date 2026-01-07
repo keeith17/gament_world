@@ -28,7 +28,7 @@ export default function Layout({ children }: LayoutProps) {
         //     : {}
         // }
         style={{
-          backgroundImage: "url(/temp_back.png)",
+          backgroundImage: "url(/temp_letter4.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

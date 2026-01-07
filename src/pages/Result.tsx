@@ -21,7 +21,7 @@ export default function Result() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 
     const img = new Image();
-    img.src = "/temp_letter3.png";
+    img.src = "/temp_letter4.png";
     img.onload = () => setIsLoading(false);
     img.onerror = () => setIsLoading(false);
   }, []);
@@ -69,7 +69,7 @@ export default function Result() {
     <div
       className="min-h-screen max-h-screen overflow-hidden p-4 sm:p-8 md:p-20"
       style={{
-        backgroundImage: "url(/temp_letter3.png)",
+        backgroundImage: "url(/temp_letter4.png)",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
