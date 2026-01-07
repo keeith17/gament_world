@@ -16,6 +16,15 @@ export default function Result() {
 
   const [isLoading, setIsLoading] = useState(true);
 
+  // 결과에 따른 그림자 색상
+  const glowColors: Record<string, string> = {
+    daegong: "#c2d0ff",
+    qnam: "#dd3333",
+    topju: "#a861ff",
+    danju: "#FBF3CE",
+  };
+  const glowColor = winner ? glowColors[winner] : "#FAF4C0";
+
   useEffect(() => {
     // 페이지 최상단으로 스크롤
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -67,7 +76,7 @@ export default function Result() {
 
   return (
     <div
-      className="min-h-screen max-h-screen overflow-hidden p-4 sm:p-8 md:p-20"
+      className="min-h-screen max-h-screen overflow-hidden p-6 sm:p-8 md:p-20"
       style={{
         backgroundImage: "url(/temp_letter4.png)",
         backgroundSize: "cover",
@@ -75,11 +84,19 @@ export default function Result() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex flex-col items-center h-screen p-2 sm:p-4 md:p-8">
-        <div className="text-center space-y-4 max-w-2xl w-full px-2 sm:px-4 flex flex-col h-full">
+      <div className="flex flex-col items-center h-screen px-4 py-20 sm:p-4 md:p-8">
+        <div className="text-center space-y-4 max-w-2xl w-full px-4 sm:px-4 flex flex-col h-full">
           {/* 고정된 타이틀과 이미지 */}
           <div className="flex-shrink-0 result-content-header">
-            <h1 className="text-3xl font-bold text-gray-800 mb-4">
+            <h1
+              className="text-3xl mb-4"
+              style={{
+                fontFamily: "HeirofLight, sans-serif",
+                fontWeight: 900,
+                color: "#1f2937",
+                filter: `drop-shadow(1.5px 0 0 white) drop-shadow(-1.5px 0 0 white) drop-shadow(0 1.5px 0 white) drop-shadow(0 -1.5px 0 white) drop-shadow(0 0 3px ${glowColor}) drop-shadow(0 0 3px ${glowColor})`,
+              }}
+            >
               {result.title}
             </h1>
 
@@ -98,7 +115,7 @@ export default function Result() {
           </div>
 
           {/* 스크롤되는 내용 영역 */}
-          <div className="flex-1 overflow-y-auto space-y-6 mt-4 pb-32 result-content-scroll">
+          <div className="flex-1 overflow-y-auto space-y-6 mt-4 pb-16 result-content-scroll">
             <div className="result-content-body space-y-6">
               <div className="bg-white/80 p-6 rounded-lg space-y-4">
                 <div>

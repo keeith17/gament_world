@@ -107,7 +107,7 @@ export default function Home() {
           초대장에 적힌 영애의 이름은?
         </p>
 
-        <div className="space-y-4 px-24 mt-8">
+        <div className="space-y-4 mt-8 w-4/5 mx-auto">
           <input
             type="text"
             value={name}

@@ -3,6 +3,13 @@
 @tailwind utilities;
 
 @font-face {
+  font-family: "HeirofLight";
+  src: url("/HeirofLightRegular.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
   font-family: "Cafe24ClassicType";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Cafe24ClassicType-Regular.woff2")
     format("woff2");
