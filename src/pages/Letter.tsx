@@ -4,6 +4,7 @@ import { db } from "../config/firebase";
 import { questionData } from "../data/questionData";
 import { calculateResult } from "../utils/calculateResult";
 import { addDoc, collection } from "firebase/firestore";
+import { incrementResultCount } from "../utils/shardCounter";
 
 export default function Letter() {
   const navigate = useNavigate();
@@ -35,12 +36,16 @@ export default function Letter() {
         const { winner } = calculateResult(answers);
         console.log(userName, winner);
         try {
+          // 결과 저장
           await addDoc(collection(db, "results"), {
             userName,
             answers,
             winner,
             createdAt: new Date(),
           });
+
+          // 샤드 카운터 증가
+          await incrementResultCount(winner);
         } catch (error) {
           console.error("Error saving to Firestore:", error);
         }
