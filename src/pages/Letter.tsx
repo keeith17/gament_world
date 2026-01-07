@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { db } from "../config/firebase";
 import { questionData } from "../data/questionData";
@@ -10,6 +10,11 @@ export default function Letter() {
   const params = useParams();
   const questionNumber = Number(params.id);
   const [selectedWhose, setSelectedWhose] = useState("");
+
+  useEffect(() => {
+    // 페이지 최상단으로 스크롤
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [questionNumber]);
   const handleSubmit = async () => {
     if (selectedWhose) {
       // 기존 답변 가져오기

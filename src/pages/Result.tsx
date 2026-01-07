@@ -17,6 +17,9 @@ export default function Result() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // 페이지 최상단으로 스크롤
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
     const img = new Image();
     img.src = "/temp_letter3.png";
     img.onload = () => setIsLoading(false);
@@ -95,7 +98,7 @@ export default function Result() {
           </div>
 
           {/* 스크롤되는 내용 영역 */}
-          <div className="flex-1 overflow-y-auto space-y-6 mt-4 pb-20 result-content-scroll">
+          <div className="flex-1 overflow-y-auto space-y-6 mt-4 pb-32 result-content-scroll">
             <div className="result-content-body space-y-6">
               <div className="bg-white/80 p-6 rounded-lg space-y-4">
                 <div>
