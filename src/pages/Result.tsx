@@ -38,7 +38,7 @@ export default function Result() {
   const handleShare = async () => {
     const shareData = {
       title: "GAMENT 제국 티파티 결과",
-      text: `${userName} 영애의 파트너는 ${result?.title}입니다! GAMENT 제국에서 당신의 파트너를 찾아보세요!`,
+      text: `${userName} 영애의 파트너는 ${result?.title}입니다. 매주 금요일 밤 9시, 가먼트 제국의 파티에서 당신의 파트너를 찾아보세요! #전엔티_초대장`,
       url: `${window.location.origin}?v=3`,
     };
 
