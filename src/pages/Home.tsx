@@ -42,29 +42,32 @@ export default function Home() {
             padding: "10%",
           }}
         >
-          <div className="text-center space-y-2">
+          <div
+            className="text-center space-y-2 relative"
+            style={{ top: "-8%" }}
+          >
             <p
-              className="text-sm md:text-base"
+              className="text-xs md:text-base"
               style={{
-                fontFamily: "Cafe24ClassicType, sans-serif",
+                fontFamily: "HSbombaram, sans-serif",
                 color: "#a778b1",
               }}
             >
               가먼트 제국으로부터 초대장이 도착했다.
             </p>
             <p
-              className="text-sm md:text-base"
+              className="text-xs md:text-base"
               style={{
-                fontFamily: "Cafe24ClassicType, sans-serif",
+                fontFamily: "HSbombaram, sans-serif",
                 color: "#a778b1",
               }}
             >
               금요일 밤 9시, 성대한 파티가 열릴 예정이라는데...
             </p>
             <p
-              className="text-sm md:text-base"
+              className="text-xs md:text-base"
               style={{
-                fontFamily: "Cafe24ClassicType, sans-serif",
+                fontFamily: "HSbombaram, sans-serif",
                 color: "#a778b1",
               }}
             >

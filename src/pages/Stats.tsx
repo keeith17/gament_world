@@ -25,7 +25,7 @@ export default function Stats() {
           <h1
             className="text-4xl font-bold"
             style={{
-              fontFamily: "Cafe24ClassicType, sans-serif",
+              fontFamily: "HSbombaram, sans-serif",
               background: "linear-gradient(to right, #7c3aed, #ec4899)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text",
