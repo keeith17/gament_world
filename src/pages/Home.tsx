@@ -23,91 +23,57 @@ export default function Home() {
       </button>
 
       <div className="w-full text-center space-y-6 p-8">
-        {/* 데스크탑 */}
-        <div className="hidden sm:block">
-          <h1
-            className="text-6xl font-bold"
-            style={{
-              fontFamily: "Cafe24ClassicType, sans-serif",
-              background: "linear-gradient(to right, #7c3aed, #ec4899)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-              filter:
-                "drop-shadow(2px 0 0 white) drop-shadow(-2px 0 0 white) drop-shadow(0 2px 0 white) drop-shadow(0 -2px 0 white) drop-shadow(0 0 6px #FAF4C0) drop-shadow(0 0 6px #FAF4C0)",
-            }}
-          >
-            GAMENT 제국에서
-          </h1>
-          <h1
-            className="text-4xl font-bold mt-4"
-            style={{
-              fontFamily: "Cafe24ClassicType, sans-serif",
-              background: "linear-gradient(to right, #7c3aed, #ec4899)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              color: "transparent",
-              filter:
-                "drop-shadow(2px 0 0 white) drop-shadow(-2px 0 0 white) drop-shadow(0 2px 0 white) drop-shadow(0 -2px 0 white) drop-shadow(0 0 6px #FAF4C0) drop-shadow(0 0 6px #FAF4C0)",
-            }}
-          >
-            초대장이 도착했다!
-          </h1>
+        <div className="w-[100%] md:w-[90%] mx-auto mb-8">
+          <img
+            src="/main_title.png"
+            alt="GAMENT 제국에서 초대장이 도착했다! 초대장에 적힌 영애의 이름은?"
+            className="w-full"
+          />
         </div>
 
-        {/* 모바일 */}
-        <div className="sm:hidden">
-          <h1
-            className="text-6xl font-bold"
-            style={{
-              fontFamily: "Cafe24ClassicType, sans-serif",
-              background: "linear-gradient(to right, #7c3aed, #ec4899)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              filter:
-                "drop-shadow(2px 0 0 white) drop-shadow(-2px 0 0 white) drop-shadow(0 2px 0 white) drop-shadow(0 -2px 0 white) drop-shadow(0 0 6px #FAF4C0) drop-shadow(0 0 6px #FAF4C0)",
-            }}
-          >
-            GAMENT
-          </h1>
-          <h1
-            className="text-6xl font-bold"
-            style={{
-              fontFamily: "Cafe24ClassicType, sans-serif",
-              background: "linear-gradient(to right, #7c3aed, #ec4899)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              filter:
-                "drop-shadow(2px 0 0 white) drop-shadow(-2px 0 0 white) drop-shadow(0 2px 0 white) drop-shadow(0 -2px 0 white) drop-shadow(0 0 6px #FAF4C0) drop-shadow(0 0 6px #FAF4C0)",
-            }}
-          >
-            제국에서
-          </h1>
-          <h1
-            className="text-4xl font-bold"
-            style={{
-              fontFamily: "Cafe24ClassicType, sans-serif",
-              background: "linear-gradient(to right, #7c3aed, #ec4899)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              filter:
-                "drop-shadow(2px 0 0 white) drop-shadow(-2px 0 0 white) drop-shadow(0 2px 0 white) drop-shadow(0 -2px 0 white) drop-shadow(0 0 6px #FAF4C0) drop-shadow(0 0 6px #FAF4C0)",
-            }}
-          >
-            초대장이 도착했다!
-          </h1>
-        </div>
-        <p
-          className="text-lg text-gray-700"
-          style={{ fontFamily: "Cafe24ClassicType, sans-serif" }}
+        <div
+          className="w-[100%] md:w-[80%] mx-auto mb-8 flex items-center justify-center relative"
+          style={{
+            backgroundImage: "url(/invitation.png)",
+            backgroundSize: "100% 100%",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            aspectRatio: "2 / 1",
+            padding: "10%",
+          }}
         >
-          초대장에 적힌 영애의 이름은?
-        </p>
+          <div className="text-center space-y-2">
+            <p
+              className="text-sm md:text-base"
+              style={{
+                fontFamily: "Cafe24ClassicType, sans-serif",
+                color: "#a778b1",
+              }}
+            >
+              가먼트 제국으로부터 초대장이 도착했다.
+            </p>
+            <p
+              className="text-sm md:text-base"
+              style={{
+                fontFamily: "Cafe24ClassicType, sans-serif",
+                color: "#a778b1",
+              }}
+            >
+              금요일 밤 9시, 성대한 파티가 열릴 예정이라는데...
+            </p>
+            <p
+              className="text-sm md:text-base"
+              style={{
+                fontFamily: "Cafe24ClassicType, sans-serif",
+                color: "#a778b1",
+              }}
+            >
+              나는 누구와 파티에 가게 될까?
+            </p>
+          </div>
+        </div>
 
-        <div className="space-y-4 mt-8 w-4/5 mx-auto">
+        <div className="space-y-4 mt-8 w-[90%] sm:w-4/5 mx-auto">
           <input
             type="text"
             value={name}
