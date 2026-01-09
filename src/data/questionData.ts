@@ -1,9 +1,9 @@
 export const questionData = {
   1: {
-    question: "티파티 초대장을 받은 당신의 첫 반응은?",
+    question: "파티 초대장을 받은 당신의 첫 반응은?",
     answer: [
       {
-        select: "재밌겠다는 생각이 먼저 든다 어떤 일이 벌어질지 기대된다",
+        select: "재미있을 것 같아! 어떤 일이 벌어질지 기대된다",
         whose: "qnam",
       },
       {
@@ -11,11 +11,11 @@ export const questionData = {
         whose: "daegong",
       },
       {
-        select: "어떤 인맥과 이득이 생길지 계산해 본다",
+        select: "이 자리가 내 삶에 어떤 변화를 가져올지 가늠해 본다",
         whose: "danju",
       },
       {
-        select: "누가 나를 노리고 있는지부터 신경 쓰인다",
+        select: "이 초대가 나를 향한 선택인지 확인하고 싶어진다",
         whose: "topju",
       },
     ],
@@ -47,15 +47,15 @@ export const questionData = {
     question: "당신이 티파티에서 가장 편안하게 느끼는 위치는?",
     answer: [
       {
-        select: "벽 쪽, 소수 인원과 조용히 이야기할 수 있는 자리",
+        select: "벽 쪽, 소수 인원과 조용히 이야기할 수 있는 곳",
         whose: "daegong",
       },
       {
-        select: "약간 떨어진 곳에서 전체를 내려다볼 수 있는 자리",
+        select: "약간 떨어진 곳에서 전체를 내려다볼 수 있는 곳",
         whose: "topju",
       },
       {
-        select: "출입구 근처, 사람들의 이동이 잘 보이는 자리",
+        select: "출입구 근처, 사람들의 이동이 잘 보이는 곳",
         whose: "danju",
       },
       {
@@ -69,7 +69,7 @@ export const questionData = {
     question: "내 파트너가 질투를 하면 어떤 모습일까?",
     answer: [
       {
-        select: "불쾌함을 숨기지 않고 분명히 드러낸다",
+        select: "표정 없이 지켜보다가 결정적인 순간에 개입한다",
         whose: "topju",
       },
       {
@@ -91,7 +91,7 @@ export const questionData = {
     question: "내가 위험에 처했을 때, 파트너에게 바라는 모습은?",
     answer: [
       {
-        select: "이유가 없더라도 내 앞을 지키는 사람",
+        select: "이유가 없더라도 나를 지키는 사람",
         whose: "daegong",
       },
       {
@@ -99,7 +99,7 @@ export const questionData = {
         whose: "topju",
       },
       {
-        select: "상황을 뒤집을 묘안을 즉시 꺼내는 사람",
+        select: "상황을 해결할 묘수을 즉시 꺼내는 사람",
         whose: "qnam",
       },
       {
@@ -121,7 +121,7 @@ export const questionData = {
         whose: "qnam",
       },
       {
-        select: "균형과 현실성",
+        select: "감정과 현실 사이의 균형",
         whose: "danju",
       },
       {
@@ -139,11 +139,11 @@ export const questionData = {
         whose: "qnam",
       },
       {
-        select: "감정을 숨기지 않고 터뜨린다",
+        select: "왜 그런 선택을 했는지 이유부터 파악하려고 한다",
         whose: "topju",
       },
       {
-        select: "문제의 원인을 구조적으로 정리한다",
+        select: "감정을 남겨 둔 채, 문제의 구조부터 정리한다",
         whose: "danju",
       },
       {
@@ -165,11 +165,11 @@ export const questionData = {
         whose: "topju",
       },
       {
-        select: "“좋아하니까 말하는 거야”라는 직진",
+        select: "“좋아하니까”라는 돌직구",
         whose: "qnam",
       },
       {
-        select: "“함께하면 서로에게 이득이 된다”는 명확함",
+        select: "“여러 가능성에도 결국 너였다”는 시인",
         whose: "danju",
       },
     ],
@@ -179,7 +179,7 @@ export const questionData = {
     question: "당신이 파트너에게 두근거리는 순간은?",
     answer: [
       {
-        select: "감정에 휘둘리지 않고도 나를 선택했을 때",
+        select: "수많은 선택지 중에서 결국 나를 선택했을 때",
         whose: "danju",
       },
       {
@@ -209,7 +209,7 @@ export const questionData = {
         whose: "daegong",
       },
       {
-        select: "상황에 맞게 바뀌지만 늘 예의 있는 호칭",
+        select: "이름을 정확히 부르되, 늘 선을 지키는 호칭",
         whose: "danju",
       },
       {
@@ -220,7 +220,7 @@ export const questionData = {
   },
 
   11: {
-    question: "티파티가 끝난 후, 파트너와 보낼 이상적인 밤은?",
+    question: "파티가 끝난 후, 파트너와 보낼 이상적인 밤은?",
     answer: [
       {
         select: "둘만의 공간에서 깊은 시선 교환",
@@ -231,7 +231,7 @@ export const questionData = {
         whose: "qnam",
       },
       {
-        select: "다음 만남을 기약하는 차분한 정리",
+        select: "자연스럽게 다음 만남을 기약하는 차분한 정리",
         whose: "danju",
       },
       {
@@ -242,18 +242,18 @@ export const questionData = {
   },
   12: {
     question:
-      "이 성대한 티파티가 막을 내린 뒤, 당신은 그와 어떤 미래를 그리고 싶을까?",
+      "이 성대한 파티가 막을 내린 뒤, 당신은 그와 어떤 미래를 그리고 싶을까?",
     answer: [
       {
         select: "말없이 곁을 지키며, 시간이 쌓일수록 단단해지는 관계",
         whose: "daegong",
       },
       {
-        select: "서로의 상처를 파고들며, 누구보다 깊게 얽히는 관계",
+        select: "서로의 약점까지 품으며, 누구보다 깊게 얽히는 관계",
         whose: "topju",
       },
       {
-        select: "신뢰와 이해를 바탕으로 현실을 함께 설계하는 관계",
+        select: "손해인 것을 알면서도 나를 선택하는 관계",
         whose: "danju",
       },
       {
@@ -271,7 +271,7 @@ export const questionData = {
         whose: "topju",
       },
       {
-        select: "어디든 네가 있는 곳이 좋다며 웃으며 따라온다",
+        select: "어디든 네가 있는 곳이 좋다며 묻지 않고 따라온다",
         whose: "qnam",
       },
       {
@@ -279,7 +279,7 @@ export const questionData = {
         whose: "daegong",
       },
       {
-        select: "떠나는 것이 최선인지 끝까지 검토한 뒤 결정한다",
+        select: "당신에게 가장 나은 선택인지 끝까지 검토한 뒤 결정한다",
         whose: "danju",
       },
     ],

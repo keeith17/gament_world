@@ -44,7 +44,7 @@ export default function Home() {
         >
           <div
             className="text-center space-y-2 relative"
-            style={{ top: "-8%" }}
+            style={{ top: "-10%" }}
           >
             <p
               className="text-xs md:text-base"

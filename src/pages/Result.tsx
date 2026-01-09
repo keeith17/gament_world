@@ -17,13 +17,13 @@ export default function Result() {
   const [isLoading, setIsLoading] = useState(true);
 
   // 결과에 따른 그림자 색상
-  const glowColors: Record<string, string> = {
-    daegong: "#c2d0ff",
-    qnam: "#dd3333",
-    topju: "#a861ff",
-    danju: "#FBF3CE",
-  };
-  const glowColor = winner ? glowColors[winner] : "#FAF4C0";
+  // const glowColors: Record<string, string> = {
+  //   daegong: "#c2d0ff",
+  //   qnam: "#dd3333",
+  //   topju: "#a861ff",
+  //   danju: "#FBF3CE",
+  // };
+  // const glowColor = winner ? glowColors[winner] : "#FAF4C0";
 
   useEffect(() => {
     // 페이지 최상단으로 스크롤
@@ -76,7 +76,7 @@ export default function Result() {
 
   return (
     <div
-      className="min-h-screen max-h-screen overflow-hidden p-6 sm:p-8 md:p-20"
+      className="min-h-screen max-h-screen overflow-hidden p-0 sm:p-8 md:p-20"
       style={{
         backgroundImage: "url(/temp_letter4.png)",
         backgroundSize: "cover",
@@ -84,38 +84,74 @@ export default function Result() {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex flex-col items-center h-screen px-4 py-20 sm:p-4 md:p-8">
+      <div className="flex flex-col items-center h-screen px-4 py-20 sm:p-4 md:p-8 overflow-y-auto result-content-scroll">
         <div className="text-center space-y-4 max-w-2xl w-full px-4 sm:px-4 flex flex-col h-full">
           {/* 고정된 타이틀과 이미지 */}
           <div className="flex-shrink-0 result-content-header">
-            <h1
-              className="text-3xl mb-4"
+            <div
+              className="w-full relative flex flex-col items-center"
               style={{
-                fontFamily: "HeirofLight, sans-serif",
-                fontWeight: 900,
-                color: "#1f2937",
-                filter: `drop-shadow(1.5px 0 0 white) drop-shadow(-1.5px 0 0 white) drop-shadow(0 1.5px 0 white) drop-shadow(0 -1.5px 0 white) drop-shadow(0 0 3px ${glowColor}) drop-shadow(0 0 3px ${glowColor})`,
+                backgroundImage:
+                  winner === "daegong"
+                    ? "url(/invitation_daegong.png)"
+                    : `url(/invitation_${winner}.png)`,
+                backgroundSize: "100% 100%",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                aspectRatio: "3 / 4",
               }}
             >
-              {result.title}
-            </h1>
+              {/* 위쪽 20% 빈 공간 */}
+              <div style={{ height: "20%" }}></div>
 
-            <div className="flex gap-2 sm:gap-4 justify-center items-end">
-              <img
-                src={`/${winner}.png`}
-                alt={result.title}
-                className="max-h-40 sm:max-h-52 md:max-h-64 w-auto rounded-lg"
-              />
-              <img
-                src={`/${winner}2.png`}
-                alt={result.title}
-                className="max-h-32 sm:max-h-44 md:max-h-52 w-auto rounded-lg pb-2"
-              />
+              {/* default 이미지 30% */}
+              <div
+                style={{
+                  height: "43%",
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <img
+                  src={
+                    winner === "daegong"
+                      ? "/default_daegong.png"
+                      : `/default_${winner}.png`
+                  }
+                  alt={result.title}
+                  style={{
+                    maxHeight: "100%",
+                    maxWidth: "70%",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
+
+              {/* 초대장 문구 50% */}
+              <div
+                style={{
+                  height: "37%",
+                  width: "100%",
+                  padding: "2%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <p
+                  className="text-gray-700 whitespace-pre-line leading-relaxed text-center text-xs md:text-base"
+                  style={{ fontFamily: "HSbombaram, sans-serif" }}
+                >
+                  {result.invitation.body.replace(/{{user}}/g, userName)}
+                </p>
+              </div>
             </div>
           </div>
 
           {/* 스크롤되는 내용 영역 */}
-          <div className="flex-1 overflow-y-auto space-y-6 mt-4 pb-16 result-content-scroll">
+          <div className="flex-1 space-y-6 mt-4 pb-32">
             <div className="result-content-body space-y-6">
               <div className="bg-white/80 p-6 rounded-lg space-y-4">
                 <div>
@@ -148,13 +184,6 @@ export default function Result() {
                       {text}
                     </p>
                   ))}
-                </div>
-
-                <div className="bg-pink-50 p-4 rounded-lg text-left">
-                  <h3 className="text-sm text-pink-700 mb-2">초대장</h3>
-                  <p className="text-gray-700 whitespace-pre-line leading-relaxed">
-                    {result.invitation.body.replace(/{{user}}/g, userName)}
-                  </p>
                 </div>
               </div>
             </div>
