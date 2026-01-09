@@ -32,19 +32,18 @@ export default function Home() {
         </div>
 
         <div
-          className="w-[100%] md:w-[80%] mx-auto mb-8 flex items-center justify-center relative"
+          className="w-[100%] md:w-[80%] mx-auto mb-8 flex items-center justify-center relative pb-[3.5vw] md:pb-[1.5vw]"
           style={{
             backgroundImage: "url(/invitation.png)",
             backgroundSize: "100% 100%",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
             aspectRatio: "2 / 1",
-            padding: "10%",
           }}
         >
           <div
             className="text-center space-y-2 relative"
-            style={{ top: "-10%" }}
+            // style={{ top: "-6%" }}
           >
             <p
               className="text-xs md:text-base"

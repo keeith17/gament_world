@@ -77,7 +77,7 @@ export const questionData = {
         whose: "danju",
       },
       {
-        select: "말없이 행동으로 내 앞을 지켜 준다",
+        select: "말없이 내 옆자리를 자연스럽게 차지한다",
         whose: "daegong",
       },
       {
@@ -99,7 +99,7 @@ export const questionData = {
         whose: "topju",
       },
       {
-        select: "상황을 해결할 묘수을 즉시 꺼내는 사람",
+        select: "상황을 해결할 묘수를 즉시 꺼내는 사람",
         whose: "qnam",
       },
       {
