@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "gament-world",
     "public": "dist",
     "ignore": [
       "firebase.json",
