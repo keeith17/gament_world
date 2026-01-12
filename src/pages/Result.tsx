@@ -64,8 +64,8 @@ export default function Result() {
     };
 
     const handleGoHome = () => {
-        localStorage.removeItem("answer");
-        localStorage.removeItem("userName");
+        // localStorage.removeItem("answer");
+        // localStorage.removeItem("userName");
         navigate("/");
     };
 
