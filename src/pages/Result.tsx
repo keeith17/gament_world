@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { calculateResult } from "../utils/calculateResult";
 import { resultData } from "../data/resultData";
-import { downloadResultImage } from "../utils/downloadResultImage";
+import { downloadResultImage, shareResultWithImage } from "../utils/downloadResultImage";
 import Loading from "../components/Loading";
 
 export default function Result() {
@@ -39,23 +39,10 @@ export default function Result() {
     }, []);
 
     const handleShare = async () => {
-        const shareData = {
-            title: "GAMENT 제국 티파티 결과",
-            text: `${userName} 영애의 파트너는 ${result?.title}입니다. 매주 금요일 밤 9시, 가먼트 제국의 파티에서 당신의 파트너를 찾아보세요! #전엔티_초대장`,
-            url: `${window.location.origin}?v=7`,
-        };
+        const shareUrl = `${window.location.origin}?v=7`;
+        const shareText = `${userName} 영애의 파트너는 ${result?.title}입니다. 매주 금요일 밤 9시, 가먼트 제국의 파티에서 당신의 파트너를 찾아보세요! #전엔티_초대장`;
 
-        try {
-            if (navigator.share) {
-                await navigator.share(shareData);
-            } else {
-                const textToCopy = `${shareData.text}\n${shareData.url}`;
-                await navigator.clipboard.writeText(textToCopy);
-                alert("결과가 클립보드에 복사되었습니다!");
-            }
-        } catch (error) {
-            console.error("공유 실패:", error);
-        }
+        await shareResultWithImage(shareUrl, shareText);
     };
 
     const handleDownloadImage = async () => {
